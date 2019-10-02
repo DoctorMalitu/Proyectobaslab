@@ -109,7 +109,7 @@ else {
                                 <form id="subir_archivos" action="" method="POST" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Documento</label>
-                                            <input type="text" id="CC"  name="documento" class="form-control"  value="<?php echo $datos["documento"] ?>">
+                                            <input type="text" id="CC"  name="documento" class="form-control"  value="<?php echo $datos["documento"] ?>" readonly="readonly">
                                         </div>
                                      <div class="form-group">
                                         <p>Subir archivo:</p>

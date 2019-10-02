@@ -51,12 +51,12 @@ try {
      $mail->Port = 587;                                  // TCP port to connect to
 
     //Recipients
-   $mail->From = 'joselmr96@gmail.com'; // Email desde donde env铆o el correo.
+   $mail->From = 'joselmr96@gmail.com'; // Email desde donde envio el correo.
 	$mail->FromName = $nameemail;
 	$mail->AddAddress($emailresul,"$emailresul");
 $mail->WordWrap   = 80;
     // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->isHTML(true);                                  // Establecer formato de correo electrónico a HTML
    $mail->Subject = "Envio de resultados"; // Este es el titulo del email.
 	// $mensajeHtml = nl2br($mensaje);
     $mail->Body = "
@@ -64,7 +64,7 @@ $mail->WordWrap   = 80;
 
 		<body> 
 
-		<h1>Recibiste un nuevo mensaje desde el formulario de contacto</h1>
+		<h2>Recibiste un nuevo mensaje desde el formulario de contacto</h2>
 
 		<p>Informacion enviada por el usuario de la web:</p>
 

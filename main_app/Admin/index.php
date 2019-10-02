@@ -67,20 +67,23 @@ require 'functions.php';
                             <a href="Edicion/registro.php"><i class="fa fa-edit"></i> <span>Registro</span></a>
                         </li>
                         <li>
-                            <a href="Edicion/consult.php"><i class="fa fa-user"></i> <span>Pacientes</span></a>
+                            <a href="Edicion/consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>
 						<li>
-                            <a href="Edicion/miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro examenes</span></a>
+                            <a href="Edicion/miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro Examenes</span></a>
                         </li>
                         <li>
-                            <a href="Edicion/consultproducto.php"><i class="fa fa-plus-square"></i> <span>Consultar Examenes</span></a>
+                            <a href="Edicion/consultproducto.php"><i class="fa fa-plus-square"></i> <span>Examenes</span></a>
                         </li>
                         <li>
-                            <a href="Edicion/enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Reenvio resultados</span></a>
+                            <a href="Edicion/enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
+                        </li> 
+                        <li>
+                            <a href="Edicion/registrousuarios.php"><i class="fas fa-user-shield"></i> <span>Registrar Usuarios</span></a>
+                        </li> 
+                        <li>
+                            <a href="Edicion/usuarios.php"><i class="fas fa-users-cog"></i> <span>Usuarios</span></a>
                         </li>   
-                        <li>
-                            <a href="Edicion/verarchivos.php"><i class="fa fa-paper-plane"></i> <span>Ver resultados</span></a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -90,7 +93,7 @@ require 'functions.php';
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                         <div class="dash-widget">
-							<span class="dash-widget-bg1"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+							<span class="dash-widget-bg1"><i class="fas fa-users" aria-hidden="true"></i></span>
 							<div class="dash-widget-info text-right">
 								<h3>Usuarios Registrados &nbsp; [<?php echo $cont3=Todosclientes(); ?>]</h3>
 								<span class="widget-title1">Registrados <i class="fa fa-check" aria-hidden="true"></i></span>
@@ -99,19 +102,19 @@ require 'functions.php';
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                         <div class="dash-widget">
-                            <span class="dash-widget-bg2"><i class="fa fa-user-o"></i></span>
+                            <span class="dash-widget-bg2"><i class="fas fa-microscope" aria-hidden="true"></i></span>
                             <div class="dash-widget-info text-right">
-                                <h3>Usuarios Atendidos &nbsp; [<?php echo $cont2=ContadorEs();?>]</h3>
-                                <span class="widget-title2">Atendidos <i class="fa fa-check" aria-hidden="true"></i></span>
+                                <h3>Examenes &nbsp; [<?php echo $cont2=ContadorEs();?>]</h3>
+                                <span class="widget-title2">Examenes <i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                         <div class="dash-widget">
-                            <span class="dash-widget-bg3"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                            <span class="dash-widget-bg3"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
                             <div class="dash-widget-info text-right">
-                                <h3>Usuarios sin Atender &nbsp; [<?php echo $cont3=Clientesinatender();?>]</h3>
-                                <span class="widget-title3">Sin Atender <i class="fa fa-check" aria-hidden="true"></i></span>
+                                <h3>Archivos Subidos &nbsp; [<?php echo $cont3=Clientesinatender();?>]</h3>
+                                <span class="widget-title3">Archivos <i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                         </div>
                     </div>
@@ -125,7 +128,7 @@ require 'functions.php';
                         </div>
                     </div>
                 </div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-12 col-md-6 col-lg-6 col-xl-6">
 						<div class="card">
 							<div class="card-body">
@@ -153,12 +156,12 @@ require 'functions.php';
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-8 col-xl-8">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title d-inline-block">Pendientes por agregar resultados</h4> <a href="Edicion/consult.php" class="btn btn-primary float-right">Ver Todo</a>
+								<h4 class="card-title d-inline-block">Nuevos Registros</h4> <a href="Edicion/consult.php" class="btn btn-primary float-right">Ver Todo</a>
 							</div>
 							<div class="card-body p-0 ">
 								<div class="table-responsive" style="overflow-y: auto; height: 316px;">
@@ -181,7 +184,7 @@ require 'functions.php';
                                         while ($row = mysqli_fetch_array($res)) {
                                             $tablon .="<tbody>";   
                                             $tablon .="<tr>";
-                                            $tablon .="<td style='min-width: 200px;'><a class='avatar' href='Edicion/consult.php'>P</a><h2><a href='Edicion/consult.php'>$row[nombre]<span>Identificación: $row[documento]</span></a></h2></td>";
+                                            $tablon .="<td style='min-width: 200px;'><a class='avatar' href='Edicion/consult.php'><i class='fas fa-user'></i></a><h2><a href='Edicion/consult.php'>$row[nombre]<span>Identificación: $row[documento]</span></a></h2></td>";
                                             $tablon .="<td><h5 class='time-title p-0'>Nombre</h5><p>$row[nombre]</p></td>";
                                             $tablon .="<td><h5 class='time-title p-0'>Apellido</h5><p>$row[apellido]</p></td>";
                                             $tablon .="<td><h5 class='time-title p-0'>Entidad</h5><p>$row[personal]</p></td>";
@@ -218,8 +221,8 @@ require 'functions.php';
                                                 $tablon1 .="<a href='profile.html'><img src='assets/img/user.jpg' alt='' class='w-40 rounded-circle'><span class='status online'></span></a>";
                                                 $tablon1 .="</div>";
                                                 $tablon1 .="<div class='contact-info'>";
-                                                $tablon1 .="<span class='contact-name text-ellipsis'>Nombre: $row1[Nombre]<span class='contact-name text-right'>&nbsp; Rango: &nbsp; $row1[Tipo_usuario]</span></span>";
-                                                $tablon1 .="<span class='contact-date'>Usuario: $row1[Usuario]</span>";
+                                                $tablon1 .="<span class='contact-name text-ellipsis'>Nombre: $row1[Nombre]</span>";
+                                                $tablon1 .="<span class='contact-date'>Usuario: $row1[Usuario] <span class='contact-name text-right'>&nbsp; Rango: $row1[Tipo_usuario]</span></span>";
                                                 $tablon1 .="</div>";
                                                 $tablon1 .="</div>";
                                                 $tablon1 .="</li>";   
@@ -240,36 +243,43 @@ require 'functions.php';
 					<div class="col-12 col-md-6 col-lg-8 col-xl-8">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title d-inline-block">Nuevos pacientes </h4>
+								<h4 class="card-title d-inline-block">Pacientes de empresas</h4> <a href="Edicion/consult.php" class="btn btn-primary float-right">Ver Todo</a>
 							</div>
-							<div class="card-block">
-								<div class="table-responsive">
-									<table class="table mb-0 new-patient-table">
-                                    <?php
-                                            $query2="SELECT `nombre`, `personal`, `fecha` FROM `clientes` ORDER BY fecha DESC ";
-                                            $res2 = $dbho -> query($query2);
-                                            $tablon2 ='';
-                                            while ($row2 = mysqli_fetch_array($res2)) {
-                                                
-                                                $tablon2 .="<tbody>";   
-                                                $tablon2 .="<tr>"; 
-                                                $tablon2 .="<td>"; 
-                                                $tablon2 .="<img width='28' height='28' class='rounded-circle' src='assets/img/user.jpg' alt=''>"; 
-                                                $tablon2 .="<h2>Nombre: $row2[nombre]</h2>";
-                                                $tablon2 .="</td>";
-                                                $tablon2 .="<td>"; 
-                                                $tablon2 .="<h2>$row2[personal]</h2>";
-                                                $tablon2 .="</td>";
-                                                $tablon2 .="<td>"; 
-                                                $tablon2 .="<h2>$row2[fecha]</h2>";
-                                                $tablon2 .="</td>";
-                                                $tablon2 .="</tr>";
-                                                $tablon2 .="</tbody>"; 
-                                                }
-                                                echo $tablon2;
+							<div class="card-body p-0 ">
+								<div class="table-responsive" style="overflow-y: auto; height: 316px;">
+									<table class="table mb-0">
+										<thead class="d-none">
+											<tr>
+												<th>Usuario</th>
+												<th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>Entidad</th>
+                                                <th>Empresa</th>                                        
+												<th>Fecha</th>    
+											</tr>
+                                        </thead>
+                                        
+                                        <?php
+                                         $dbho = new conexionbs();
+                                         $query="SELECT `documento`, `nombre`, `apellido`,`genero`, `personal`,`empresas`, `fecha` FROM `clientes` WHERE personal='Empresa' ORDER BY fecha DESC ";
+                                        $res = $dbho -> query($query);
+                                        $tablon ='';
+                                        while ($row = mysqli_fetch_array($res)) {
+                                            $tablon .="<tbody>";   
+                                            $tablon .="<tr>";
+                                            $tablon .="<td style='min-width: 200px;'><a class='avatar2' href='Edicion/consult.php'><i class='fas fa-building'></i></a><h2><a href='Edicion/consult.php'>Nombre: $row[nombre]<span>Identificación: $row[documento]</span></a></h2></td>";
+                                            $tablon .="<td><h5 class='time-title p-0'>Apellido</h5><p>$row[apellido]</p></td>";
+                                            $tablon .="<td><h5 class='time-title p-0'>Genero</h5><p>$row[genero]</p></td>";
+                                            $tablon .="<td><h5 class='time-title p-0'>Entidad</h5><p>$row[personal]</p></td>";
+                                            $tablon .="<td><h5 class='time-title p-0'>Empresa</h5><p>$row[empresas]</p></td>";
+                                            $tablon .="<td><h5 class='time-title p-0'>Fecha</h5><p>$row[fecha]</p></td>";
+                                            // $tablon .="<td class='text-right'><a href='Edicion/consult.php' class='btn btn-outline-primary take-btn'>VER</a></td>";
+                                            $tablon .="<tr>";
+                                             $tablon .="</tbody>";   
+                                            }
+                                            echo $tablon;
                                         ?>
-										
-									</table>
+                                    </table>
 								</div>
 							</div>
 						</div>
@@ -305,17 +315,17 @@ require 'functions.php';
 								</div>
 								<div class="item">
 									<div class="bar">
-										<span class="percent"><?php echo $cont2=ContadorEs();?>%</span>
-										<div class="item-progress" data-percent="<?php echo $cont2=ContadorEs();?>">
-											<span class="title">Atendidos</span>
+										<span class="percent"><?php echo $cont2=PacientesParticulares();?>%</span>
+										<div class="item-progress" data-percent="<?php echo $cont2=PacientesParticulares();?>">
+											<span class="title">Pacientes&nbsp;Particulares</span>
 										</div>
 									</div>
 								</div>
 								<div class="item">
 									<div class="bar">
-										<span class="percent"><?php echo $cont3=Clientesinatender(); ?>%</span>
-										<div class="item-progress" data-percent="<?php echo $cont3=Clientesinatender(); ?>">
-											<span class="title">Sin&nbsp;atender</span>
+										<span class="percent"><?php echo $cont3=PacientesEmpresa(); ?>%</span>
+										<div class="item-progress" data-percent="<?php echo $cont3=PacientesEmpresa(); ?>">
+											<span class="title">Pacientes&nbsp;Empresas</span>
 										</div>
 									</div>
 								</div>
@@ -329,9 +339,9 @@ require 'functions.php';
 								</div>
 								<div class="item">
 									<div class="bar">
-										<span class="percent">30%</span>									
-										<div class="item-progress" data-percent="30">
-											<span class="title">Discharge</span>
+										<span class="percent"><?php echo $cont4=Clientesinatender(); ?>%</span>									
+										<div class="item-progress" data-percent="<?php echo $cont4=Clientesinatender(); ?>">
+											<span class="title">Archivos&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos</span>
 										</div>
 									</div>
 								</div>

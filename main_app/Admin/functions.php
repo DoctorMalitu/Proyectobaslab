@@ -41,7 +41,7 @@ if(isset($_SESSION['tiempo']) ) {
 function ContadorEs()
 {
     $dbho = new conexionbs();
-    $query="SELECT * FROM clientes WHERE genero='Hombre'"; 
+    $query="SELECT * FROM producto"; 
     $numero = $dbho -> query($query);
     $cont= mysqli_num_rows($numero);
     return $cont;
@@ -57,7 +57,7 @@ function Todosclientes()
 function Clientesinatender()
 {
     $dbho = new conexionbs();
-    $query="SELECT * FROM clientes WHERE genero='Mujer'"; 
+    $query="SELECT * FROM archivos"; 
     $clientesin = $dbho -> query($query);
     $cont= mysqli_num_rows($clientesin);
     return $cont;
@@ -65,7 +65,7 @@ function Clientesinatender()
 function EmpresasRegistradas()
 {
     $dbho = new conexionbs();
-    $query="SELECT * FROM usuarios WHERE Tipo_usuario='Usuario'"; 
+    $query="SELECT * FROM usuarios WHERE Tipo_usuario='Empresa'"; 
     $clientesin = $dbho -> query($query);
     $cont= mysqli_num_rows($clientesin);
     return $cont;
@@ -74,6 +74,22 @@ function RegisReciente()
 {
     $dbho = new conexionbs();
     $query="SELECT * from clientes WHERE fecha = (SELECT MAX (fecha) FROM clientes)"; 
+    $clientesin = $dbho -> query($query);
+    $cont= mysqli_num_rows($clientesin);
+    return $cont;
+}
+function PacientesParticulares()
+{
+    $dbho = new conexionbs();
+    $query="SELECT * from clientes WHERE personal='Particular'"; 
+    $clientesin = $dbho -> query($query);
+    $cont= mysqli_num_rows($clientesin);
+    return $cont;
+}
+function PacientesEmpresa()
+{
+    $dbho = new conexionbs();
+    $query="SELECT * from clientes WHERE personal='Empresa'"; 
     $clientesin = $dbho -> query($query);
     $cont= mysqli_num_rows($clientesin);
     return $cont;

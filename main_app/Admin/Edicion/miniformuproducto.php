@@ -3,39 +3,6 @@ require '../functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-// //Comprobamos si esta definida la sesión 'tiempo'.
-// if(isset($_SESSION['tiempo']) ) {
-
-//     //Tiempo en segundos para dar vida a la sesión.
-//     $inactivo = 10;//20min en este caso.
-
-//     //Calculamos tiempo de vida inactivo.
-//     $vida_session = time() - $_SESSION['tiempo'];
-
-//         //Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
-//         if($vida_session > $inactivo)
-//         {
-//             //Removemos sesión.
-//             session_unset();
-//             //Destruimos sesión.
-//             session_destroy();              
-//             //Redirigimos pagina.
-//             $archivoActual = $_SERVER['PHP_SELF'];
-//             header("refresh:1;url= http://localhost/Baslab04l07l2019/");
-
-//             exit();
-//         } else {  // si no ha caducado la sesion, actualizamos
-//             $_SESSION['tiempo'] = time();
-//         }
-
-
-// } else {
-//     //Activamos sesion tiempo.
-//     $_SESSION['tiempo'] = time();
-// }
-?>
 <!-- form-vertical23:59-->
 <head>
     <meta charset="utf-8">
@@ -96,17 +63,23 @@ require '../functions.php';
                             <a href="registro.php"><i class="fa fa-edit"></i> <span>Registro</span></a>
                         </li>
                         <li>
-                            <a href="consult.php"><i class="fa fa-user"></i> <span>Pacientes</span></a>
+                            <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro Examenes</span></a>
                         </li>
                         <li>
-                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro examenes</span></a>
-                        </li>
-                        <li>
-                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Registro examenes</span></a>
+                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Examenes</span></a>
                         </li>  
                         <li>
-                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultado</span></a>
+                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
                         </li>
+                        <li>
+                            <a href="registrousuarios.php"><i class="fas fa-user-shield"></i> <span>Registrar Usuarios</span></a>
+                        </li> 
+                        <li>
+                            <a href="usuarios.php"><i class="fas fa-users-cog"></i> <span>Usuarios</span></a>
+                        </li> 
                     </ul>
                 </div>
             </div>

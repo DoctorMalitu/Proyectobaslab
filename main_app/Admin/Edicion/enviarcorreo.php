@@ -63,17 +63,23 @@ require '../functions.php';
                             <a href="registro.php"><i class="fa fa-edit"></i> <span>Registro</span></a>
                         </li>
                         <li>
-                            <a href="consult.php"><i class="fa fa-user"></i> <span>Pacientes</span></a>
+                            <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro Examenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Consulta Examenes</span></a>
+                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Examenes</span></a>
                         </li>   
-                        <li>
-                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultado</span></a>
+                        <li class="active">
+                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
                         </li>
+                        <li>
+                            <a href="registrousuarios.php"><i class="fas fa-user-shield"></i> <span>Registrar Usuarios</span></a>
+                        </li> 
+                        <li>
+                            <a href="usuarios.php"><i class="fas fa-users-cog"></i> <span>Usuarios</span></a>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -91,7 +97,7 @@ require '../functions.php';
                     <div class="col-md-6"> 
                     <div class="card-box">
                             <h4 class="card-title text-center">ENVIÓ DE RESULTADO POR CORREO NATURAL</h4>
-                            <h5 class="text-center">Acá podras enviar los resultados con solo escribir el correo</h5>
+                            <h5 class="text-center">Acá podras enviar los resultados con solo escribir el nombre y correo del paicente</h5>
                                 <br><br>
                                 <form id="enviarcorreoorapido" action="" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">

@@ -62,20 +62,26 @@ $dbho = new conexionbs();
                         <li>
                             <a href="../index.php"><i class="fa fa-hospital-o"></i> <span>Inicio</span></a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="registro.php"><i class="fa fa-edit"></i> <span>Registro</span></a>
                         </li>
                         <li>
-                            <a href="consult.php"><i class="fa fa-user"></i> <span>Pacientes</span></a>
+                            <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro Examenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Consulta Examenes</span></a>
+                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Examenes</span></a>
                         </li>   
                         <li>
-                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultado</span></a>
+                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
+                        </li>
+                        <li>
+                            <a href="registrousuarios.php"><i class="fas fa-user-shield"></i> <span>Registrar Usuarios</span></a>
+                        </li>  
+                        <li>
+                            <a href="usuarios.php"><i class="fas fa-users-cog"></i> <span>Usuarios</span></a>
                         </li>
                     </ul>
                 </div>
@@ -158,7 +164,7 @@ $dbho = new conexionbs();
                                                  $resultado = $dbho -> query($query1);
                                                  while($emp=mysqli_fetch_array($resultado))
                                                 {?>
-                                                <option value="<?php echo $emp['id'];?>" <?php if($emp['id']==$emp['Nombre']) echo  "selected" ?> ><?php echo $emp['Nombre'];?></option>
+                                                <option value="<?php echo $emp['Nombre'];?>" <?php if($emp['id']==$emp['Nombre']) echo  "selected" ?> ><?php echo $emp['Nombre'];?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>

@@ -1,9 +1,8 @@
 <?php
 require '../functions.php';
 require '../../conexionbs.php';
-
 ?>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <!-- patients23:17-->
 <head>
@@ -65,19 +64,21 @@ require '../../conexionbs.php';
                         <li>
                             <a href="registro.php"><i class="fa fa-edit"></i> <span>Registro</span></a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="consult.php"><i class="fa fa-user"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro Examenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Registro examenes</span></a>
+                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Examenes</span></a>
                         </li> 
                         <li>
-                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Reenvio Resultados</span></a>
+                            <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
                         </li> 
-                        
+                        <li>
+                            <a href="registrousuarios.php"><i class="fas fa-user-shield"></i> <span>Registrar Usuarios</span></a>
+                        </li>  
                     </ul>
                 </div>
             </div>
@@ -87,26 +88,24 @@ require '../../conexionbs.php';
             <div class="content">
                 <div class="row">
                     <div class="col-sm-4 col-3">
-                        <h4 class="page-title">Archivos de los Pacientes</h4>
+                        <h4 class="page-title">Pacientes</h4>
                     </div>
-                    <!-- <div class="col-sm-8 col-9 text-right m-b-20">
-                        <a href="registro.php" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Archivos</a>
-                    </div> -->
+                    <div class="col-sm-8 col-9 text-right m-b-20">
+                        <a href="registro.php" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Agregar Pacientes</a>
+                    </div>
                 </div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class=" table-responsive">
-							<table class="datatable2 table table-bordered table-striped custom-table  mb-0">
+							<table class="datatableusers table table-bordered table-striped custom-table  mb-0">
 								<thead>
-									<tr>   
-                                            <th>Id</th> 
-                                            <th>Documento</th> 
-                                            <th>Nombre</th> 
-                                            <th>Apellido</th>
-                                            <th>Entidad</th>  
-                                            <th>Empresa</th> 
-                                            <th>Archivos</th>                                             
-                                            <th>Opciones</th>     
+									<tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Usuario</th>
+                                            <th>Tipo de usurio</th>
+                                            <th>Fecha de registro</th>
+                                            <th>Opciones</th>
 									</tr>
                                 </thead>   
 							</table>
@@ -129,10 +128,8 @@ require '../../conexionbs.php';
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/consult.js"></script>
     <script src="https://kit.fontawesome.com/e4cc53287d.js"></script>
-
-    
 </body>
-              
+                                    
 
 <!-- patients23:19-->
 </html>

@@ -5,7 +5,7 @@ require '../../conexionbs.php';
 if (isset($_GET['ids'])) {
     $dbho= new conexionbs();
     $ids=$_GET['ids'];
-	$query="SELECT  id, documento_cliente, ruta FROM archivos WHERE documento_cliente='$ids'";
+	$query="SELECT  archivos.id, archivos.documento_cliente, clientes.nombre, clientes.apellido, clientes.personal,clientes.empresas ,archivos.ruta FROM clientes INNER JOIN archivos ON clientes.documento=archivos.documento_cliente WHERE archivos.documento_cliente='$ids'";
     $res=$dbho->query($query);
     if(!$res)
 {
@@ -16,7 +16,7 @@ if (isset($_GET['ids'])) {
         $arreglo["row"][]=$row;
     }
    echo json_encode($arreglo);
-
+   
 }
 mysqli_free_result($res);
 }

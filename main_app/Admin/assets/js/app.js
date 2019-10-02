@@ -51,9 +51,9 @@ $(document).ready(function($) {
 		$('#chat_sidebar').removeClass('opened');
 		return false;
 	});
-	
-	
-	
+
+
+
 	// Sidebar overlay reset
 	$sidebarOverlay.on('click', function() {
 		var $target = $($(this).attr('data-reff'));
@@ -73,7 +73,8 @@ $(document).ready(function($) {
 			width: '100%'
 		});
 	}
-	
+
+
 	// Floating Label
 	if($('.floating').length > 0) {
 		$('.floating').on('focus blur', function(e) {
@@ -131,19 +132,19 @@ $(document).ready(function($) {
 		$pageWrapper.css('min-height', prHeight);
 	});
 	
-	// Datetimepicker
-	if($('.datetimepicker').length > 0) {
-		$('.datetimepicker').datetimepicker({
-			format: 'DD/MM/YYYY'
-		});
-	}
+	// // Datetimepicker
+	// if($('.datetimepicker').length > 0) {
+	// 	$('.datetimepicker').datetimepicker({
+	// 		format: 'DD/MM/YYYY'
+	// 	});
+	// }
 
-	// Datatable
+	// Datatable Todos los usuarios
 	if($('.datatable').length > 0) {
 		const content = `
 			<td class='text-right'>
 				<div class='dropdown dropdown-action'>
-					<a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+					<a href='#' class='action-icon dropdown-toggle m-l-5' data-toggle='dropdown' aria-expanded='false'>
 						<i class='fa fa-ellipsis-v'></i>
 					</a>
 					<div class='dropdown-menu dropdown-menu-right'>
@@ -151,13 +152,13 @@ $(document).ready(function($) {
 							<i class='fa fa-pencil m-r-5'></i>Editar
 						</a>
 						<a id='delete-button' class='dropdown-item'>
-							<i class='fa fa-trash-o m-r-5'></i> Eliminar
+							<i class='fa fa-trash-o m-r-5'></i>Eliminar
 						</a>
 						<a id='addresul-button' class='dropdown-item'>
-						<i class="fas fa-poll"></i> Agregar Resultados
+						<i class="fas fa-poll m-r-5"></i>Agregar Resultados
 						</a>
 						<a id='listarchi-button' class='dropdown-item'>
-						<i class="fas fa-poll"></i> Archivos
+						<i class="fas fa-file-pdf m-r-5"></i>Ver Archivos
 						</a>
 
 					</div>
@@ -166,8 +167,21 @@ $(document).ready(function($) {
 
 		$('.datatable').DataTable({
 			"language": {
-				"zeroRecords": "No se encuentra el usuario..."
+				"zeroRecords": "No se encuentra el usuario...",
+				"sProcessing":     "Procesando...",
+				"sSearch":"Buscar",
+				"sLengthMenu":     "Mostrar _MENU_ registros",
+				"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sLoadingRecords": "Cargando...",
+				"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"oPaginate": {
+					"sFirst":    "Primero",
+					"sLast":     "Último",
+					"sNext":     "Siguiente",
+					"sPrevious": "Anterior"
+				},
 			  },
+			  "order": [[ 1, "asc" ]],
 			"ajax":{
 				"method":"POST",
 				"url":"listar.php",
@@ -219,9 +233,14 @@ $(document).ready(function($) {
 	}
 
 
-	// Datatable
+	// Datatable Archivos personales
 
-	if($('.datatable2').length > 0) {		
+	if($('.datatable2').length > 0) {	
+		var URLactual = window.location.href;// obtiene la url
+// alert(URLactual);
+		var url = URLactual; var id = url.substring(url.lastIndexOf('?') + 1);; //Solo agarra el ids=111111 y se sapara de la url actual
+		var urlatual="listararchivos.php?"+id; //se concatena la url pasada con el ids del link primario
+		// alert(urlatual);
 		const content = `
 			<td class='text-right'>
 				<div class='dropdown dropdown-action'>
@@ -229,46 +248,55 @@ $(document).ready(function($) {
 						<i class='fa fa-ellipsis-v'></i>
 					</a>
 					<div class='dropdown-menu dropdown-menu-right'>
-						<a id='edit-button' class='dropdown-item'>
-							<i class='fa fa-pencil m-r-5'></i>Editar
-						</a>
 						<a id='delete-button' class='dropdown-item'>
-							<i class='fa fa-trash-o m-r-5'></i> Eliminar
+							<i class='fa fa-trash-o m-r-5'></i>Eliminar
 						</a>
 						<a id='enviararchi-button' class='dropdown-item'>
-						<i class="fas fa-poll"></i> Enviar correo
+						<i class="fas fa-poll m-r-5"></i>Enviar correo
 						</a>
-
+						<a id='descargararchi-button' class='dropdown-item'>
+						<i class='fas fa-file-download m-r-5'></i>Descargar
+						</a>
+				
 					</div>
 				</div>
 			</td>`;
 			
 		$('.datatable2').DataTable({
 			"language": {
-				"zeroRecords": "No se encuentra el usuario..."
+				"zeroRecords": "No se encuentra el usuario...",
+				"sProcessing":     "Procesando...",
+				"sSearch":"Buscar",
+				"sLengthMenu":     "Mostrar _MENU_ registros",
+				"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sLoadingRecords": "Cargando...",
+				"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"oPaginate": {
+					"sFirst":    "Primero",
+					"sLast":     "Último",
+					"sNext":     "Siguiente",
+					"sPrevious": "Anterior"
+				},
 			  },
 			"ajax":{
-				"method":"GET",
+				"method":"POST",
 				"cache": "true",
 				"responsive": "true",
-				"url":"listararchivos.php",
-				data: "",
+				"url":urlatual,
+				"dataSrc":"row"
 				},
 			"columns":[
-				{"data":"id"},
-				{"data":"documento_cliente"},
-				{"data":"ruta"},
+				{"row":"id"},	
+				{"row":"documento_cliente"},	
+				{"row":"nombre"},
+				{"row":"apellido"},
+				{"row":"personal"},
+				{"row":"empresas"},
+				{"row":"ruta"},
 				{"defaultContent": content}
 				
 			]
 			
-		});
-
-		$('.datatable2').on( 'draw.dt', function () {
-			$('.dropdown-toggle').on('click', function () {
-				const href = 'editararchi.php?id=' + $(this).closest('tr').find('td').eq(0).html();
-				$(this).parent().find('#edit-button').attr('href', href);
-			});
 		});
 
 		$('.datatable2').on( 'draw.dt', function () {
@@ -280,17 +308,22 @@ $(document).ready(function($) {
 
 		$('.datatable2').on( 'draw.dt', function () {
 			$('.dropdown-toggle').on('click', function () {
-				const href = 'enviararchi.php?id=' + $(this).closest('tr').find('td').eq(0).html();
+				const href = 'enviararchi.php?ids=' + $(this).closest('tr').find('td').eq(0).html();
 				$(this).parent().find('#enviararchi-button').attr('href', href);
 			});
 		});
-		
+
+		$('.datatable2').on( 'draw.dt', function () {
+			$('.dropdown-toggle').on('click', function () {
+				const href = 'descargararchi.php?id=' + $(this).closest('tr').find('td').eq(0).html();
+				$(this).parent().find('#descargararchi-button').attr('href', href);
+			});
+		});
+	
 	}
 
-
-
-	// Datatable
-	if($('.datatablexam').length > 0) {
+	// Datatable Usuarios
+	if($('.datatableusers').length > 0) {
 		const content = `
 			<td class='text-right'>
 				<div class='dropdown dropdown-action'>
@@ -307,27 +340,101 @@ $(document).ready(function($) {
 				</div>
 			</td>`;
 
-		$('.datatablexam').DataTable({
+		$('.datatableusers').DataTable({
+			"language": {
+				"zeroRecords": "No se encuentra el usuario...",
+				"sProcessing":     "Procesando...",
+				"sSearch":"Buscar",
+				"sLengthMenu":     "Mostrar _MENU_ registros",
+				"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sLoadingRecords": "Cargando...",
+				"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"oPaginate": {
+					"sFirst":    "Primero",
+					"sLast":     "Último",
+					"sNext":     "Siguiente",
+					"sPrevious": "Anterior"
+				},
+			  },
 			"ajax":{
 				"method":"POST",
-				"url":"listarexam.php",
+				"url":"listaradmin.php",
 				"dataSrc":"row"
 			},
 			"columns":[
-				{"row":"codigo"},
-				{"row":"nombre"},
-				{"row":"precio"},
+				{"row":"id"},
+				{"row":"Nombre"},
+				{"row":"Usuario"},
+				{"row":"Tipo_usuario"},
+				{"row":"fecha_regis"},
 				{"defaultContent": content}
 			]
 		});
 
-		$('.datatablexam').on( 'draw.dt', function () {
+		$('.datatableusers').on( 'draw.dt', function () {
 			$('.dropdown-toggle').on('click', function () {
 				const href = 'editarexamen.php?id=' + $(this).closest('tr').find('td').eq(0).html();
 				$(this).parent().find('#edit-button').attr('href', href);
 			});
 		});
 	}
+
+		// Datatable Examenes
+		if($('.datatablexam').length > 0) {
+			const content = `
+				<td class='text-right'>
+					<div class='dropdown dropdown-action'>
+						<a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+							<i class='fa fa-ellipsis-v'></i>
+						</a>
+						<div class='dropdown-menu dropdown-menu-right'>
+							<a id='edit-button' class='dropdown-item'>
+								<i class='fa fa-pencil m-r-5'></i>Editar</a>
+							<a class='dropdown-item' href='../../Edicion/editarexamen.php' data-toggle='modal' data-target='#delete_patient'>
+								<i class='fa fa-trash-o m-r-5'></i> Eliminar
+							</a>
+						</div>
+					</div>
+				</td>`;
+	
+			$('.datatablexam').DataTable({
+				"language": {
+					"zeroRecords": "No se encuentra el usuario...",
+					"sProcessing":     "Procesando...",
+					"sSearch":"Buscar",
+					"sLengthMenu":     "Mostrar _MENU_ registros",
+					"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+					"sLoadingRecords": "Cargando...",
+					"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+					"oPaginate": {
+						"sFirst":    "Primero",
+						"sLast":     "Último",
+						"sNext":     "Siguiente",
+						"sPrevious": "Anterior"
+					},
+				  },
+				"ajax":{
+					"method":"POST",
+					"url":"listarexam.php",
+					"dataSrc":"row"
+				},
+				"columns":[
+					{"row":"codigo"},
+					{"row":"nombre"},
+					{"row":"precio"},
+					{"defaultContent": content}
+				]
+			});
+	
+			$('.datatablexam').on( 'draw.dt', function () {
+				$('.dropdown-toggle').on('click', function () {
+					const href = 'editarexamen.php?id=' + $(this).closest('tr').find('td').eq(0).html();
+					$(this).parent().find('#edit-button').attr('href', href);
+				});
+			});
+		}
+
+
 	
 	// Bootstrap Tooltip
 	if($('[data-toggle="tooltip"]').length > 0) {
@@ -340,13 +447,13 @@ $(document).ready(function($) {
 	  });
 	 
 	
-	// Registro Ajax
+	// Registro usuarios Ajax
 	$('#registrarAjax').submit(function(a){
 		var parametros = new FormData($('#registrarAjax')[0]);
 		a.preventDefault();
 		$.ajax({
 			type: "POST",
-            url: "../crud.php",
+            url: "crud.php",
             data: parametros,
 			contentType: false,
 			processData: false
@@ -390,6 +497,7 @@ $(document).ready(function($) {
 		// $('.select').trigger('change');
 	});
 
+	//Editar clientes
 	$('#editar_clientes').submit(function(e){	
 		e.preventDefault();
 		$.ajax({
@@ -403,6 +511,33 @@ $(document).ready(function($) {
            }
 		});	
 		// $('.select').trigger('change');
+	});
+
+	// Registro de usuarios admin y empresas
+	$('#registroadminajax').submit(function(e){	
+		e.preventDefault();
+		$.ajax({
+			type: 'POST',
+            url: "registraruserempre.php",
+			data: $(this).serialize(),
+			success: function(data)
+            {
+				var alert= '<div id="myalert" class="alert alert-warning alert-dismissible fade show" role="alert">'+'<strong>Usuario Registrado</strong> con exito.'+'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+'<span aria-hidden="true">&times;</span>'+'</button>'+'</div>';
+				
+				$('.alert').append(alert);
+					setTimeout(function(){
+						$('.alert').append('on');
+					},200);
+				
+
+				$('.close').click(function() {
+					$('$myalert').hide('fade');
+				});
+                    // location.href = 'http://localhost/Baslabgit2/main_app/Admin/Edicion/consult.php';           
+           }
+		});	
+		$('#registroadminajax').trigger('reset');
+		$('.select').trigger('change');
 	});
 
 });

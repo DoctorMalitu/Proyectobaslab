@@ -1161,7 +1161,7 @@ textarea.form-control {
 	font-size: 50px;
 	text-align: center;
 	line-height: 65px;
-	background: #7a92a3;
+	background: #ff1313;
 	border-radius: 50%;
 	font-size: 40px;
 	height: 65px;
@@ -1309,7 +1309,7 @@ ul.chat-user-total li i.old-users {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #ffbc35;
+	background-color: #ff8303;
 	z-index: 5;
 }
 .bar-chart > .chart > .item > .bar > .percent {
@@ -1391,7 +1391,7 @@ ul.chat-user-total li i.old-users {
 	font-size: 13px;
 }
 .dash-widget-info > span.widget-title3 {
-	background: #7a92a3;
+	background: #ff1313;
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 4px;
@@ -1907,7 +1907,7 @@ ul.chat-user-total li i.old-users {
 	max-width: 60%;
 }
 .avatar {
-	background-color:#7a92a3;
+	background-color:#0bb1f1;
 	border-radius: 50%;
 	color: #fff;
 	display: inline-block;
@@ -1928,6 +1928,31 @@ ul.chat-user-total li i.old-users {
 	color: #fff;
 }
 .avatar > img {
+	width: 100%;
+	display: block;
+}
+.avatar2 {
+	background-color:#ffbc35;
+	border-radius: 50%;
+	color: #fff;
+	display: inline-block;
+	font-weight: 500;
+	height: 38px;
+	line-height: 38px;
+	margin: 0 10px 0 0;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: middle;
+	width: 38px;
+	position: relative;
+	white-space: nowrap;
+}
+.avatar2:hover {
+	color: #fff;
+}
+.avatar2 > img {
 	width: 100%;
 	display: block;
 }

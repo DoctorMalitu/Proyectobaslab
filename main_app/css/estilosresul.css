@@ -1,0 +1,150 @@
+.page-wrapper {
+	left: 0;
+	padding-top: 50px;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.page-wrapper > .content {
+	padding: 30px;
+}
+#descargararchi-button{
+	margin-right: 10px;
+}
+.card-box {
+	background-color: rgba(248, 248, 248, 0.932);
+	border-radius: 4px;
+	margin-bottom: 30px;
+	padding: 20px;
+	position: relative;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.card-title {
+	color: #333;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.form-group {
+	margin-bottom: 20px;
+}
+input,
+button,
+a {
+	transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+input,
+button {
+	outline: none;
+}
+input[type="file"] {
+	height: auto;
+	padding: 6px 0.75rem;
+}
+input[type=text],
+input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.fileupload input.upload {
+	cursor: pointer;
+	filter: alpha(opacity=0);
+	font-size: 20px;
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+	position: absolute;
+	right: -3px;
+	top: -3px;
+	padding: 5px;
+}
+.search-box .input-group {
+	background-color: #e6e6e6;
+	border: 1px solid #ddd;
+	border-radius: 50px;
+}
+.search-box .input-group .form-control {
+	background: transparent;
+	border: none;
+}
+.message-area .input-group .form-control {
+	background-color: #fff;
+	border: 1px solid #eaeaea;
+	box-shadow: none;
+	color: #555;
+	display: block;
+	font-size: 14px;
+	height: 44px;
+	margin: 0;
+	padding: 6px 12px;
+	resize: none;
+}
+.message-area .input-group .form-control:focus {
+	height: 150px;
+	transition: all 0.5s ease 0s;
+}
+.form-focus .form-control::-webkit-input-placeholder {
+	color: transparent;
+	transition: 240ms;
+}
+.form-focus .form-control:focus::-webkit-input-placeholder {
+	transition: none;
+}
+.form-focus.focused .form-control::-webkit-input-placeholder {
+	color: #bbb;
+}
+.material-switch > input[type="checkbox"] {
+	display: none;
+}
+.material-switch > input[type="checkbox"]:checked + label:before {
+	background: inherit;
+	opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label:after {
+	background: inherit;
+	left: 20px;
+}
+.upload-input {
+	width: 100%;
+}
+.table-inbox input[type="radio"],
+.table-inbox input[type="checkbox"] {
+	cursor: pointer;
+}
+.btn-primary {
+	border-color: transparent;
+	background-color: #009efb;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.active,
+.btn-primary:active,
+.open > .dropdown-toggle.btn-primary {
+	background-color: #009efb;
+	border: 1px solid #009efb;
+	color: #fff;
+}
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary.focus:active,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.open > .dropdown-toggle.btn-primary.focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.open > .dropdown-toggle.btn-primary:hover {
+	background-color: #009efb;
+	border: 1px solid #009efb;
+}
+.btn-primary.active:not(:disabled):not(.disabled),
+.btn-primary:active:not(:disabled):not(.disabled),
+.show > .btn-primary.dropdown-toggle {
+	background-color: #009efb;
+	border-color: #009efb;
+	color: #fff;
+}
