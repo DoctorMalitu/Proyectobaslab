@@ -128,8 +128,8 @@ $dbho = new conexionbs();
                                             <label>Tipo de paciente</label>
                                             <select name="personal" class="select">
                                                  <option value="" disabled selected value>Seleccione</option>
+                                                 <option value="Particular">Particular</option>
                                                 <option value="Empresa">Empresa</option>
-                                                <option value="Particular">Particular</option>
                                                 <option value="Otro">Otro</option>
                                             </select>
                                         </div>
@@ -160,6 +160,7 @@ $dbho = new conexionbs();
                                             <label>Tipo de empresa</label>
                                             <select name="empresas" class="select">
                                                  <option value="" disabled selected value>Seleccione</option>
+                                                 <option value="No" >No Pertenece</option>
                                                  <?php $query1="SELECT * FROM `usuarios` WHERE Tipo_usuario='Empresa' ";
                                                  $resultado = $dbho -> query($query1);
                                                  while($emp=mysqli_fetch_array($resultado))

@@ -79,7 +79,7 @@ $mail->WordWrap   = 80;
 
         $mail->CharSet = "utf-8"; 
         // $emailAttachment = $datos['ruta']->Output('','S');
-        $ruta = dirname(__FILE__). "/archivos/";
+        $ruta = dirname(__FILE__). "../../archivos/";
         $tipo=$datos['tipo'];
         $nombresin=$datos['ruta'];
         $nombrefinal= trim($nombresin); //Eliminamos los espacios en blanco

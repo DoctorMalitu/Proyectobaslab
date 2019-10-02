@@ -11,13 +11,13 @@ if (isset($_GET['id'])) {
     $archivo=$datos['ruta'];
     $nombrefinal= trim($archivo); //Eliminamos los espacios en blanco
     $nombref= preg_replace('[\s+]',"", $nombrefinal);//Sustituye una expresión regular
-    $filePatch='https://pruebabaslab2.000webhostapp.com/main_app/Admin/Edicion/archivos/'.$nombref;
+    $filePatch='../../archivos/'.$nombref;
     header('Cache-Control: public');
     header('Content-Description: File Transfer');
     header('Content-disposition: attachment; filename='.$nombref); 
     header('Content-type: application/pdf');
     header('Content-Transfer-Encoding: binary');
-    readfile('archivos/'.$nombref);
+    readfile('../../archivos/'.$nombref);
     
 }
 else {

@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
     $datos=mysqli_fetch_array($res);
     $nombrefinal= trim($datos['ruta']); //Eliminamos los espacios en blanco
     $nombref= preg_replace('[\s+]',"", $nombrefinal);//Sustituye una expresión regular
-    $elimnararchi= unlink("archivos/".$nombref);
+    $elimnararchi= unlink("../../archivos/".$nombref);
     $query1="DELETE FROM archivos WHERE id=".$id;
     $dbho->query($query1);
 	if ($dbho->affected_rows <0 ) {
