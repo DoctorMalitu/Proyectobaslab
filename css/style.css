@@ -88,15 +88,15 @@ label{
     color: #00d2d4;
     text-decoration: none;
     display: block;
-    font-size: 38px; 
+    font-size: 30px; 
     font-weight: 600;
     float: left;
     
 }
 
 .imagenlogo{
-	width: 50px;
-	height:50px;
+	width: 40px;
+	height:40px;
 	margin:-7px auto;
 	display:block;
 	float: left;
@@ -126,7 +126,7 @@ label{
     color: #464646;
     font-size: 15px;
     text-transform: uppercase;
-    padding: 0px 18px 23px;
+    padding: 0px 5px 23px;
     position: relative;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,.navbar-default .navbar-nav li a.active {
@@ -152,7 +152,7 @@ label{
 .navbar-right {
     float: right !important;
     margin-right: 0px;
-    margin-top: 15px;
+    margin-top: 8px;
 }
 .navbar-header h1 a span {
     color: #f54785; /* Color secundario del logo */
