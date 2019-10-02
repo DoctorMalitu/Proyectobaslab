@@ -145,7 +145,7 @@ $(document).ready(function($) {
 			<td class='text-right'>
 				<div class='dropdown dropdown-action'>
 					<a href='#' class='action-icon dropdown-toggle m-l-5' data-toggle='dropdown' aria-expanded='false'>
-						<i class='fa fa-ellipsis-v'></i>
+					+ <i class="fas fa-mouse-pointer"></i>
 					</a>
 					<div class='dropdown-menu dropdown-menu-right'>
 						<a id='edit-button' class='dropdown-item'>
@@ -245,7 +245,7 @@ $(document).ready(function($) {
 			<td class='text-right'>
 				<div class='dropdown dropdown-action'>
 					<a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-						<i class='fa fa-ellipsis-v'></i>
+					+ <i class="fas fa-mouse-pointer"></i>
 					</a>
 					<div class='dropdown-menu dropdown-menu-right'>
 						<a id='delete-button' class='dropdown-item'>
@@ -328,7 +328,7 @@ $(document).ready(function($) {
 			<td class='text-right'>
 				<div class='dropdown dropdown-action'>
 					<a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-						<i class='fa fa-ellipsis-v'></i>
+						+ <i class="fas fa-mouse-pointer"></i>
 					</a>
 					<div class='dropdown-menu dropdown-menu-right'>
 						<a id='edit-button' class='dropdown-item'>
@@ -385,12 +385,13 @@ $(document).ready(function($) {
 				<td class='text-right'>
 					<div class='dropdown dropdown-action'>
 						<a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-							<i class='fa fa-ellipsis-v'></i>
+						+ <i class="fas fa-mouse-pointer"></i>
 						</a>
 						<div class='dropdown-menu dropdown-menu-right'>
 							<a id='edit-button' class='dropdown-item'>
 								<i class='fa fa-pencil m-r-5'></i>Editar</a>
-							<a class='dropdown-item' href='../../Edicion/editarexamen.php' data-toggle='modal' data-target='#delete_patient'>
+
+							<a id='delete-button' class='dropdown-item'>
 								<i class='fa fa-trash-o m-r-5'></i> Eliminar
 							</a>
 						</div>
@@ -430,6 +431,13 @@ $(document).ready(function($) {
 				$('.dropdown-toggle').on('click', function () {
 					const href = 'editarexamen.php?id=' + $(this).closest('tr').find('td').eq(0).html();
 					$(this).parent().find('#edit-button').attr('href', href);
+				});
+			});
+
+			$('.datatablexam').on( 'draw.dt', function () {
+				$('.dropdown-toggle').on('click', function () {
+					const href = 'eliminarexam.php?id=' + $(this).closest('tr').find('td').eq(0).html();
+					$(this).parent().find('#delete-button').attr('href', href);
 				});
 			});
 		}

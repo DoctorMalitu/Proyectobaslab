@@ -1,12 +1,15 @@
 <?php
 
-
+require 'conexionbs.php';
+$dbho = new conexionbs();
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-  require 'conexionbs.php';
+
+
 sleep(2);
 session_start();
-$dbho = new conexionbs();
 
+if(isset($_POST['usuariolg'])){
+  
 $usuario=$dbho->real_escape_string( $_POST['usuariolg']);
 $pas=$dbho->real_escape_string($_POST['passlg']);
 
@@ -26,6 +29,8 @@ $pas=$dbho->real_escape_string($_POST['passlg']);
         $nueva_consulta->close();
   }
 }
+}
+
 
 $dbho->close();
  ?>

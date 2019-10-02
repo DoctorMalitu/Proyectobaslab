@@ -59,31 +59,30 @@ require 'functions.php';
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="menu-title">Menú</li>
-                        <li class="active">
-                            <a href="index.php"><i class="fa fa-hospital-o"></i> <span>Inicio</span></a>
+                         <li class="active">
+                            <a href="Edicion/index.php"><i class="fa fa-hospital-o"></i> <span>Inicio</span></a>
                         </li>
-						   
                         <li>
-                            <a href="Edicion/registro.php"><i class="fa fa-edit"></i> <span>Registro</span></a>
+                            <a href="Edicion/registro.php"><i class="fas fa-user-edit"></i> <span>Registro Pacientes</span></a>
                         </li>
                         <li>
                             <a href="Edicion/consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
-                        </li>
-						<li>
-                            <a href="Edicion/miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro Examenes</span></a>
+                        </li>   
+                        <li>
+                            <a href="Edicion/miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
                         </li>
                         <li>
-                            <a href="Edicion/consultproducto.php"><i class="fa fa-plus-square"></i> <span>Examenes</span></a>
-                        </li>
+                            <a href="Edicion/consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                        </li> 
                         <li>
                             <a href="Edicion/enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
                         </li> 
                         <li>
                             <a href="Edicion/registrousuarios.php"><i class="fas fa-user-shield"></i> <span>Registrar Usuarios</span></a>
-                        </li> 
-                        <li>
+                        </li>  
+                        <li >
                             <a href="Edicion/usuarios.php"><i class="fas fa-users-cog"></i> <span>Usuarios</span></a>
-                        </li>   
+                        </li>  
                     </ul>
                 </div>
             </div>

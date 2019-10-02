@@ -60,26 +60,26 @@ require '../functions.php';
                             <a href="../index.php"><i class="fa fa-hospital-o"></i> <span>Inicio</span></a>
                         </li>
                         <li>
-                            <a href="registro.php"><i class="fa fa-edit"></i> <span>Registro</span></a>
+                            <a href="registro.php"><i class="fas fa-user-edit"></i> <span>Registro Pacientes</span></a>
                         </li>
                         <li>
                             <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fa fa-medkit"></i> <span>Registro Examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fa fa-plus-square"></i> <span>Examenes</span></a>
-                        </li>   
+                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                        </li> 
                         <li class="active">
                             <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
-                        </li>
+                        </li> 
                         <li>
                             <a href="registrousuarios.php"><i class="fas fa-user-shield"></i> <span>Registrar Usuarios</span></a>
-                        </li> 
+                        </li>  
                         <li>
                             <a href="usuarios.php"><i class="fas fa-users-cog"></i> <span>Usuarios</span></a>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
             </div>

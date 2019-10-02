@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['usuario'])) {
-  if ($_SESSION['usuario']['Tipo_usuario'] != "Usuario") {
+  if ($_SESSION['usuario']['Tipo_usuario'] != "Empresa") {
     header('Location: ../Admin/');
   }
   
