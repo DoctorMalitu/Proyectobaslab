@@ -10,13 +10,13 @@ if (isset($_GET['id'])) {
     $archivo=$datos['ruta'];
     $nombrefinal= trim($archivo); //Eliminamos los espacios en blanco
     $nombref= preg_replace('[\s+]',"", $nombrefinal);//Sustituye una expresión regular
-    $filePatch='../Admin/Edicion/archivos/'.$nombref;
+    $filePatch='../archivos/'.$nombref;
     header('Cache-Control: public');
     header('Content-Description: File Transfer');
     header('Content-disposition: attachment; filename='.$nombref); 
     header('Content-type: application/pdf');
     header('Content-Transfer-Encoding: binary');
-    readfile('../Admin/Edicion/archivos/'.$nombref);
+    readfile('../archivos/'.$nombref);
 }
 else {
     header("location:consult.php");
