@@ -4,7 +4,7 @@ require '../../conexionbs.php';
 $dbho = new conexionbs();
 $query="SELECT `identificacion`, `documento`, `nombre`, `apellido`, `fecha_naci`, `genero`, `edad`, `correo`, `personal`, `empresas`, `fecha` FROM `clientes`";
 $res = $dbho -> query($query);
-if(!$res)
+if(!$res) // si no es nulo .l.
 {
     die("ERROR");
 }else{

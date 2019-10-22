@@ -17,3 +17,5 @@ if (isset($_POST['Nombre'])){
 	print("Datos guardados");
     echo "<br>";
 }
+
+?>

@@ -502,7 +502,7 @@ $(document).ready(function($) {
                     location.href = 'http://localhost/Baslabgit2/main_app/Admin/Edicion/consult.php';           
            }
 		});	
-		// $('.select').trigger('change');
+		
 	});
 
 	//Editar clientes
