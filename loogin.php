@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['usuario'])) {
   if ($_SESSION['usuario']['Tipo_usuario'] == 'Admin') {
    header('Location: main_app/Admin/');
-  }else if ($_SESSION['usuario']['Tipo_usuario'] == 'Usuario') {
+  }else if ($_SESSION['usuario']['Tipo_usuario'] == 'Empresa') {
     header('Location: main_app/Usuarioo/');
   
   }
@@ -73,7 +73,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index.html" class="active"><span class="iconmenu icon-home"></span> Inicio</a></li>
 					<li><a href="about.html"><span class="iconmenu icon-book"></span> Nosotros</a></li>
-					<li><a href="treatments.html"><span class="iconmenu icon-lab"></span> Servicios</a></li>
+					<!-- <li><a href="treatments.html"><span class="iconmenu icon-lab"></span> Servicios</a></li> -->
+					<li><a href="main_app/resultados.php"><span class="iconmenu icon-download"></span> Descargar Resultados</a></li>
 					<li><a href="contact.html"><span class="iconmenu icon-location2"></span> Contacto</a></li>
 					<li><a href="loogin.php"><span class="iconmenu icon-user-tie"></span> Usuario</a></li>
 				</ul>	
@@ -95,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 
     <!-- Login Form -->
-    <form  action="" id="formLg">
+    <form  action="" id="formLg" method="POST">
       <input type="text" id="login" name="usuariolg" class="fadeIn second" pattern="[A-Za-z0-9_-]{1,15}" required placeholder="USUARIO">
       <input type="password" id="password" name="passlg" class="fadeIn third" pattern="[A-Za-z0-9_-]{1,15}" required placeholder="PASSWORD">
       <input type="submit" class="fadeIn fourth botonlg" value="Iniciar Sesion">
@@ -112,8 +113,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- smooth scrolling -->
 
 <!-- //smooth scrolling -->
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 <script src="js/main.js"></script>
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+
 
 <!-- contacto -->
 </body>
