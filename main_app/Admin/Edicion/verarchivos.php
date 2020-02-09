@@ -16,6 +16,7 @@ require '../../conexionbs.php';
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/package/dist/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <!--[if lt IE 9]>
 		<script src="assets/js/html5shiv.min.js"></script>
@@ -135,6 +136,7 @@ require '../../conexionbs.php';
     <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/js/moment.min.js"></script>
     <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../assets/plugins/package/dist/sweetalert2.all.min.js"></script>
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/consult.js"></script>
     <script src="https://kit.fontawesome.com/e4cc53287d.js"></script>

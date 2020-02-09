@@ -140,6 +140,9 @@ input[type="file"] {
 	height: auto;
 	padding: 6px 0.75rem;
 }
+.custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Archivos";
+}
 input[type=text],
 input[type=password] {
 	-webkit-appearance: none;

@@ -2,7 +2,7 @@
 require '../functions.php';
 require '../../conexionbs.php';
 $dbho = new conexionbs();
-$query="SELECT id, Nombre, Usuario, Tipo_usuario, fecha_regis FROM usuarios";
+$query="SELECT id, Nombre, Usuario, Tipo_usuario, fecha_regis FROM usuarios WHERE Tipo_usuario='Empresa' ";
 $res = $dbho -> query($query);
 if(!$res)
 {

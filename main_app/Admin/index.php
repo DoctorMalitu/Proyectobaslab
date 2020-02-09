@@ -69,10 +69,10 @@ require 'functions.php';
                             <a href="Edicion/consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="Edicion/miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
+                            <a href="Edicion/miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Exámenes</span></a>
                         </li>
                         <li>
-                            <a href="Edicion/consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                            <a href="Edicion/consultproducto.php"><i class="fas fa-microscope"></i> <span>Exámenes</span></a>
                         </li> 
                         <li>
                             <a href="Edicion/enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
@@ -103,8 +103,8 @@ require 'functions.php';
                         <div class="dash-widget">
                             <span class="dash-widget-bg2"><i class="fas fa-microscope" aria-hidden="true"></i></span>
                             <div class="dash-widget-info text-right">
-                                <h3>Examenes &nbsp; [<?php echo $cont2=ContadorEs();?>]</h3>
-                                <span class="widget-title2">Examenes <i class="fa fa-check" aria-hidden="true"></i></span>
+                                <h3>Exámenes &nbsp; [<?php echo $cont2=ContadorEs();?>]</h3>
+                                <span class="widget-title2">Exámenes <i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                         </div>
                     </div>
@@ -233,7 +233,7 @@ require 'functions.php';
                                 </div>
                             </div>
                             <div class="card-footer text-center bg-white">
-                                <a href="doctors.html" class="text-muted">VER TODOS LOS USUARIOS</a>
+                                <a href="Edicion/usuarios.php" class="text-muted">VER TODOS LOS USUARIOS</a>
                             </div>
                         </div>
                     </div>

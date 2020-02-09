@@ -66,10 +66,10 @@ require '../functions.php';
                             <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Exámenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Exámenes</span></a>
                         </li> 
                         <li class="active">
                             <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
@@ -97,7 +97,7 @@ require '../functions.php';
                     <div class="col-md-6"> 
                     <div class="card-box">
                             <h4 class="card-title text-center">ENVIÓ DE RESULTADO POR CORREO NATURAL</h4>
-                            <h5 class="text-center">Acá podras enviar los resultados con solo escribir el nombre y correo del paicente</h5>
+                            <h5 class="text-center">Acá podrás enviar los resultados con sólo escribir el nombre y correo del paciente o empresa</h5>
                                 <br><br>
                                 <form id="enviarcorreoorapido" action="" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">

@@ -69,10 +69,10 @@ $dbho = new conexionbs();
                             <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Exámenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Exámenes</span></a>
                         </li> 
                         <li>
                             <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
@@ -98,23 +98,31 @@ $dbho = new conexionbs();
                     <div class="col-md-12">
                         <div class="card-box">
                             <h4 class="card-title">REGISTRO DE USUARIOS</h4>
+                            <div id="alerta"></div>
                             <form id="registrarAjax" action="" method="POST" >
-                                <h4 class="card-title">INFORMACION PERSONAL</h4>
+                                <h4 class="card-title">INFORMACIÓN PERSONAL</h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Tipo de documento</label>
                                             <select name="identificacion" class="select" required>
                                                  <option value="" disabled selected value>Seleccione</option>
-                                                <option value="CC">CC</option>
-                                                <option value="TI">TI</option>
-                                                <option value="TT">TT</option>
-                                                <option value="Otro">Otro</option>
+                                                <option value="RC">RC - Registro Civil</option>
+                                                <option value="TI">TI - Tarjeta de identidad</option>
+                                                <option value="CC">CC - Cédula de ciudadanía</option>
+                                                <option value="CE">CE - Cédula de extranjería</option>
+                                                <option value="PA">PA - Pasaporte</option>
+                                                <option value="MS">MS - Menor sin identificación</option>
+                                                <option value="AS">AS - Adulto sin identidad</option>                                    
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Nombre</label>
-                                            <input type="text" id="Nombre" name="nombre" class="form-control" required>
+                                            <input type="text" id="Nombre" name="nombre" class="form-control" maxlength="30" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Celular</label>
+                                            <input type="number" id="celular" name="celular" class="form-control"  oninput="maxLengthCheck(this)" maxlength = "10" min = "5" max = "9999999999" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Fecha nacimiento</label>
@@ -122,45 +130,12 @@ $dbho = new conexionbs();
                                         </div>
                                         <div class="form-group">
                                             <label>Edad</label>
-                                            <input type="text" id="edad" name="edad" class="form-control" required>
+                                            <input type="number" id="edad" name="edad" class="form-control"  oninput="maxLengthCheck(this)" maxlength = "2" min = "1" max = "99" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Tipo de paciente</label>
-                                            <select name="personal" class="select">
-                                                 <option value="" disabled selected value>Seleccione</option>
-                                                 <option value="Particular">Particular</option>
-                                                <option value="Empresa">Empresa</option>
-                                                <option value="Otro">Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Documento</label>
-                                            <input type="text" id="CC"  name="documento" class="form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Apellido</label>
-                                            <input type="text" id="Apellido" name="apellido" class="form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Genero</label>
-                                            <select name="genero" class="select">
-                                                 <option value="" disabled selected value>Seleccione</option>
-                                                <option value="Hombre">Hombre</option>
-                                                <option value="Mujer">Mujer</option>
-                                                <option value="Otro">Otro</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Correo</label>
-                                            <input type="text" name="correo" class="form-control" required>
-                                        </div>
-                                         <div class="form-group">
+                                        <div id="idempres" class="form-group" style="display: none;">
                                             <label>Tipo de empresa</label>
-                                            <select name="empresas" class="select">
-                                                 <option value="" disabled selected value>Seleccione</option>
-                                                 <option value="No" >No Pertenece</option>
+                                            <select id="empresas" name="empresas" class="select">
+                                                 <option value="No" disabled selected value>Seleccione</option>                                                
                                                  <?php $query1="SELECT * FROM `usuarios` WHERE Tipo_usuario='Empresa' ";
                                                  $resultado = $dbho -> query($query1);
                                                  while($emp=mysqli_fetch_array($resultado))
@@ -169,6 +144,38 @@ $dbho = new conexionbs();
                                                 <?php } ?>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Documento</label>
+                                            <input type="number" id="CC"  name="documento" class="form-control" oninput="maxLengthCheck(this)" maxlength = "10" min = "1" max = "9999999999" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Apellido</label>
+                                            <input type="text" id="Apellido" name="apellido" class="form-control" maxlength="30" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Género</label>
+                                            <select name="genero" class="select">
+                                                 <option value="" disabled selected value>Seleccione</option>
+                                                <option value="Hombre">Hombre</option>
+                                                <option value="Mujer">Mujer</option>
+                                               
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Correo</label>
+                                            <input type="email" name="correo" class="form-control" maxlength="30" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tipo de paciente</label>
+                                            <select id="selectempre" name="personal" class="select">
+                                                 <option value="" disabled selected value>Seleccione</option>
+                                                 <option value="Particular">Particular</option>
+                                                <option value="Empresa" onclick="show_hide()" >Empresa</option>                               
+                                            </select>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -204,6 +211,47 @@ $dbho = new conexionbs();
     <script src="../assets/js/jquery.slimscroll.js"></script>
     <script src="../assets/js/select2.min.js"></script>
     <script src="../assets/js/app.js"></script>
+
+    <script>
+  function maxLengthCheck(object) {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+    
+  function isNumeric (evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode (key);
+    var regex = /[0-9]|\./;
+    if ( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }
+</script>
+
+<script>
+$("#selectempre").on('change', function() {
+
+var selectValue = $(this).val();
+switch (selectValue) {
+
+  case 'Empresa':
+    $("#idempres").show();
+    break;
+
+    case '':
+    $("#idempres").hide();
+    break;
+
+    case 'Particular':
+    $("#idempres").hide();
+    break;
+
+}
+
+}).change();
+</script>
 </body>
 
 

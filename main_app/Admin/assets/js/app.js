@@ -192,6 +192,7 @@ $(document).ready(function($) {
 				{"row":"documento"},
 				{"row":"nombre"},
 				{"row":"apellido"},
+				{"row":"celular"},
 				{"row":"fecha_naci"},
 				{"row":"genero"},
 				{"row":"edad"},
@@ -298,14 +299,15 @@ $(document).ready(function($) {
 			]
 			
 		});
-
-		$('.datatable2').on( 'draw.dt', function () {
-			$('.dropdown-toggle').on('click', function () {
-				const href = 'eliminararchi.php?id=' + $(this).closest('tr').find('td').eq(0).html();
-				$(this).parent().find('#delete-button').attr('href', href);
+		
+			$('.datatable2').on( 'draw.dt', function () {
+				$('.dropdown-toggle').on('click', function () {
+					const href = 'eliminararchi.php?id=' + $(this).closest('tr').find('td').eq(0).html();
+					$(this).parent().find('#delete-button').attr('href', href);
+				});
 			});
-		});
-
+		
+			
 		$('.datatable2').on( 'draw.dt', function () {
 			$('.dropdown-toggle').on('click', function () {
 				const href = 'enviararchi.php?ids=' + $(this).closest('tr').find('td').eq(0).html();
@@ -333,9 +335,7 @@ $(document).ready(function($) {
 					<div class='dropdown-menu dropdown-menu-right'>
 						<a id='edit-button' class='dropdown-item'>
 							<i class='fa fa-pencil m-r-5'></i>Editar</a>
-						<a class='dropdown-item' href='../../Edicion/editarexamen.php' data-toggle='modal' data-target='#delete_patient'>
-							<i class='fa fa-trash-o m-r-5'></i> Eliminar
-						</a>
+						
 					</div>
 				</div>
 			</td>`;
@@ -373,7 +373,7 @@ $(document).ready(function($) {
 
 		$('.datatableusers').on( 'draw.dt', function () {
 			$('.dropdown-toggle').on('click', function () {
-				const href = 'editarexamen.php?id=' + $(this).closest('tr').find('td').eq(0).html();
+				const href = 'editaradmin.php?id=' + $(this).closest('tr').find('td').eq(0).html();
 				$(this).parent().find('#edit-button').attr('href', href);
 			});
 		});
@@ -464,7 +464,27 @@ $(document).ready(function($) {
             url: "crud.php",
             data: parametros,
 			contentType: false,
-			processData: false
+			processData: false,
+			success: function(data)
+            {	
+				var alert= '<div id="myalert" class="alert alert-warning alert-dismissible fade show" role="alert" style="display: block">'+'<strong>Usuario Registrado</strong> con exito.'+'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+'<span aria-hidden="true">&times;</span>'+'</button>'+'</div>';
+				// var node = document.createElement("div");
+				// var textnode = document.createTextNode(alert);
+				// node.appendChild(textnode);
+				// document.getElementById("alerta").appendChild(node);
+				
+			
+				$('#alerta').append(alert);
+					setTimeout(function(){
+						$('#alerta').addClass('on');
+					},200);
+				
+
+				$('.close').click(function() {
+					$('$myalert').hide('fade');
+				});
+                    // location.href = 'http://localhost/Baslabgit2/main_app/Admin/Edicion/consult.php';           
+          }
 		});
 		$('#registrarAjax').trigger('reset');
 		$('.select').trigger('change');
@@ -498,43 +518,158 @@ $(document).ready(function($) {
 			contentType: false,
 			processData: false,
 			success: function(data)
-            {  
-                    location.href = 'http://localhost/Baslabgit2/main_app/Admin/Edicion/consult.php';           
-           }
-		});	
+            {	
+				var alert= '<div id="myalert" class="alert alert-warning alert-dismissible fade show" role="alert" style="display: block">'+'<strong>Archivo Registrado</strong> con exito.'+'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+'<span aria-hidden="true">&times;</span>'+'</button>'+'</div>';
+				
+				
+			
+				$('#alerta').append(alert);
+					setTimeout(function(){
+						$('#alerta').addClass('on');
+					},200);
 		
-	});
 
-	//Editar clientes
-	$('#editar_clientes').submit(function(e){	
-		e.preventDefault();
-		$.ajax({
-			type: 'POST',
-            url: "editarcrud.php",
-			data: $(this).serialize(),
-			success: function(data)
-            {
-               
-                    location.href = 'http://localhost/Baslabgit2/main_app/Admin/Edicion/consult.php';           
-           }
+				$('.close').click(function() {
+					$('$myalert').hide('fade');
+				});
+
+				setTimeout(function(){
+					location.href = 'consult.php'; 
+				},300);
+                             
+          }
 		});	
 		// $('.select').trigger('change');
 	});
 
+	//Editar clientes
+
+		
+
+	
+	$('#editar_clientes').submit(function(e){	
+		e.preventDefault();
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+			  confirmButton: 'btn btn-success',
+			  cancelButton: 'btn btn-danger',
+			},
+			buttonsStyling: false
+		  })
+		  
+		  swalWithBootstrapButtons.fire({
+			title: 'Estas seguro?',
+			text: "¡No podrás revertir esto!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonText: 'Si, actualizar!',
+			cancelButtonText: 'No, cancelar!',
+			reverseButtons: true
+		  }).then((result) => {
+			if (result.value) {
+				
+			  swalWithBootstrapButtons.fire(
+				'Actualizado!',
+      'Información actualizada',
+      'success'
+			  )
+			  $.ajax({
+				type: 'POST',
+				url: "editarcrud.php",
+				data: $(this).serialize(),
+				success: function(data)
+				{
+					setTimeout( function () { 
+						location.href = 'consult.php'; 
+					}, 680);
+						          
+			   }
+			});	
+			
+			} else if (
+			  /* Read more about handling dismissals below */
+			  result.dismiss === Swal.DismissReason.cancel
+			) {
+			  location.href = 'consult.php'
+			}
+		  })
+		
+		// $('.select').trigger('change');
+	});
+
+
+  /* Editar Empresas */
+	$('#editarempresa').submit(function(e){	
+		e.preventDefault();
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+			  confirmButton: 'btn btn-success',
+			  cancelButton: 'btn btn-danger',
+			},
+			buttonsStyling: false
+		  })
+		  
+		  swalWithBootstrapButtons.fire({
+			title: 'Estas seguro?',
+			text: "¡No podrás revertir esto!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonText: 'Si, actualizar!',
+			cancelButtonText: 'No, cancelar!',
+			reverseButtons: true
+		  }).then((result) => {
+			if (result.value) {
+				
+			  swalWithBootstrapButtons.fire(
+				'Actualizado!',
+      'Información actualizada',
+      'success'
+			  )
+			  $.ajax({
+				type: 'POST',
+				url: "editarcrudadmin.php",
+				data: $(this).serialize(),
+				success: function(data)
+				{
+					setTimeout( function () { 
+						location.href = 'usuarios.php'; 
+					}, 680);
+						          
+			   }
+			});	
+			
+			} else if (
+			  /* Read more about handling dismissals below */
+			  result.dismiss === Swal.DismissReason.cancel
+			) {
+			  location.href = 'consult.php'
+			}
+		  })
+		
+		// $('.select').trigger('change');
+	});
+
+
+
 	// Registro de usuarios admin y empresas
-	$('#registroadminajax').submit(function(e){	
+	$('#regisadmin').submit(function(e){	
 		e.preventDefault();
 		$.ajax({
 			type: 'POST',
             url: "registraruserempre.php",
 			data: $(this).serialize(),
 			success: function(data)
-            {
-				var alert= '<div id="myalert" class="alert alert-warning alert-dismissible fade show" role="alert">'+'<strong>Usuario Registrado</strong> con exito.'+'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+'<span aria-hidden="true">&times;</span>'+'</button>'+'</div>';
+            {	
+				var alert= '<div id="myalert" class="alert alert-warning alert-dismissible fade show" role="alert" style="display: block">'+'<strong>Usuario Registrado</strong> con exito.'+'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+'<span aria-hidden="true">&times;</span>'+'</button>'+'</div>';
+				// var node = document.createElement("div");
+				// var textnode = document.createTextNode(alert);
+				// node.appendChild(textnode);
+				// document.getElementById("alerta").appendChild(node);
 				
-				$('.alert').append(alert);
+			
+				$('#alerta').append(alert);
 					setTimeout(function(){
-						$('.alert').append('on');
+						$('#alerta').addClass('on');
 					},200);
 				
 
@@ -542,9 +677,9 @@ $(document).ready(function($) {
 					$('$myalert').hide('fade');
 				});
                     // location.href = 'http://localhost/Baslabgit2/main_app/Admin/Edicion/consult.php';           
-           }
+          }
 		});	
-		$('#registroadminajax').trigger('reset');
+		$('#regisadmin').trigger('reset');
 		$('.select').trigger('change');
 	});
 

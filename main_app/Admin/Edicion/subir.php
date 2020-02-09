@@ -106,6 +106,7 @@ else {
                             <h4 class="card-title text-center">ENVIÓ DE RESULTADO POR CORREO NATURAL</h4>
                             <h5 class="text-center">Acá podras enviar los resultados con solo escribir el correo</h5>
                                 <br><br>
+                                <div id="alerta"></div>
                                 <form id="subir_archivos" action="" method="POST" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Documento</label>
@@ -114,7 +115,7 @@ else {
                                      <div class="form-group">
                                         <p>Subir archivo:</p>
                                         <div class="custom-file mb-3">
-                                            <input type="file" class="custom-file-input" id="fichero" name="fichero[]" size="250" maxlength="250" accept="application/pdf" multiple require>
+                                            <input type="file" class="custom-file-input" id="fichero" name="fichero[]" size="250" maxlength="250" accept="application/pdf" multiple required>
                                             <label class="custom-file-label" for="customFile">Elija el archivo</label>
                                         </div>
                                     </div>

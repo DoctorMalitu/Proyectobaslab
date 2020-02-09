@@ -23,7 +23,8 @@ if(isset($_POST['documentoresult']) || isset($_POST['fecha_naci'])){
     }
     mysqli_free_result($res);
 }else{
-    print("no joda");
+    $cosa = 123;
+    echo $cosa;
 }
 
 

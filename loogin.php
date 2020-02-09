@@ -24,6 +24,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/login.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" type="text/css" href="iconos/fonts1.css">
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <!-- js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
@@ -73,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index.html" class="active"><span class="iconmenu icon-home"></span> Inicio</a></li>
 					<li><a href="about.html"><span class="iconmenu icon-book"></span> Nosotros</a></li>
-					<!-- <li><a href="treatments.html"><span class="iconmenu icon-lab"></span> Servicios</a></li> -->
+					<li><a href="treatments.html"><span class="iconmenu icon-lab"></span> Servicios</a></li>
 					<li><a href="main_app/resultados.php"><span class="iconmenu icon-download"></span> Descargar Resultados</a></li>
 					<li><a href="contact.html"><span class="iconmenu icon-location2"></span> Contacto</a></li>
 					<li><a href="loogin.php"><span class="iconmenu icon-user-tie"></span> Usuario</a></li>

@@ -1,14 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Laboratorio Clinico Dolly Roncancio</title>
+<title>LABORATORIO CLÍNICO DOLLY RONCANCIO</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,6 +11,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 <link rel="stylesheet" type="text/css" href="../iconos/fonts1.css">
@@ -25,6 +19,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //js -->
 <!--animate-->
 <link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
 
 <!--//end-animate-->
 
@@ -68,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="../index.html" class="active"><span class="iconmenu icon-home"></span> Inicio</a></li>
 					<li><a href="../about.html"><span class="iconmenu icon-book"></span> Nosotros</a></li>
-					<!-- <li><a href="../treatments.html"><span class="iconmenu icon-lab"></span> Servicios</a></li> -->
+					<!--<li><a href="../treatments.html"><span class="iconmenu icon-lab"></span> Servicios</a></li>-->
 					<li><a href="resultados.php"><span class="iconmenu icon-download"></span> Descargar Resultados</a></li>
 					<li><a href="../contact.html"><span class="iconmenu icon-location2"></span> Contacto</a></li>
 					<li><a href="../loogin.php"><span class="iconmenu icon-user-tie"></span> Usuario</a></li>
@@ -88,8 +87,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-                <h4 class="card-title">REGISTRO DE USUARIOS</h4>
-                    <form id="resultindex" action="" method="get">
+                <h4 class="card-title">DESCARGA DE RESULTADOS</h4>
+                <div id="alerta"></div>
+                    <form id="resultindex" action="" method="POST">
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="form-group">
@@ -110,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </form> 
-                    <div class="row">
+                    <div id="chao" class="row" style="display:block;">
                         <div class="col-md-12">
                             <div class=" table-responsive">
                                 <table  class="datatableresul table table-bordered table-striped custom-table  mb-0">
@@ -124,7 +124,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <th>Entidad</th>  
                                             <th>Empresa</th> 
                                             <th>Archivos</th>                                             
-                                            <th>Opciones</th>   
+                                            <th>Opciónes</th>   
                                         </tr>
                                     </thead>   
                                 </table>

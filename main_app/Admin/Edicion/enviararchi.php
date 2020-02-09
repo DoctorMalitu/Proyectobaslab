@@ -64,22 +64,24 @@ $mail->WordWrap   = 80;
 
 		<body> 
 
-		<h2>Recibiste un nuevo mensaje desde el formulario de contacto</h2>
+		<h2>Entrega de resultados del laboratorio clínico Dolly Roncancio</h2>
 
-		<p>Informacion enviada por el usuario de la web:</p>
+		<p>Informacion del usuario:</p>
 
         <p>Documento: {$datos1['documento']}</p>
 		<p>nombre: {$datos1['nombre']}</p>
         <p>Apellidos: {$datos1['apellido']}</p>
 		<p>email: {$datos1['correo']}</p>
-
+		<br>
+    	<p><h3>Descargue el PDF que aparece en la parte inicial de este mensaje.</h3></p>
+    	<p><h3>Si tiene alguna duda sobre sus resultados por favor comunicarse al numero 3142874901 o por correo electrónico a josemora96@hotmail.com.</h3></p>
 		</body> 
 
 		</html>";
 
         $mail->CharSet = "utf-8"; 
         // $emailAttachment = $datos['ruta']->Output('','S');
-        $ruta = dirname(__FILE__). "../../archivos/";
+        $ruta = "../../archivos/";
         $tipo=$datos['tipo'];
         $nombresin=$datos['ruta'];
         $nombrefinal= trim($nombresin); //Eliminamos los espacios en blanco

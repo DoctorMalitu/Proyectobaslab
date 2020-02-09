@@ -68,10 +68,10 @@ require '../../conexionbs.php';
                             <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Exámenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Exámenes</span></a>
                         </li> 
                         <li>
                             <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
@@ -108,7 +108,7 @@ require '../../conexionbs.php';
                                             <th>Usuario</th>
                                             <th>Tipo de usurio</th>
                                             <th>Fecha de registro</th>
-                                            <th>Opciones</th>
+                                            <th>Opciónes</th>
 									</tr>
                                 </thead>   
 							</table>

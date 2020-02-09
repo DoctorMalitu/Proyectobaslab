@@ -70,10 +70,10 @@ require '../../conexionbs.php';
                             <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li>
-                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Exámenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Exámenes</span></a>
                         </li> 
                         <li>
                             <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
@@ -92,36 +92,35 @@ require '../../conexionbs.php';
             <div class="content">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">REGISTRO</h4>
+                        <h4 class="page-title">REGISTRO CUENTAS</h4>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-box">
                             <h4 class="card-title">REGISTRO DE EMPRESAS O ADMINISTRADORES</h4>
-                            <form id="registroadminajax" action="" method="POST" >
-                            <div class="alert"></div>
+                             <div id="alerta"></div>
+                            <form id="regisadmin" method="POST" >
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <label>Nombre</label>
-                                            <input type="text" id="Nombre" name="Nombre" class="form-control" required>
+                                            <input type="text" id="Nombre" name="Nombre" class="form-control" maxlength="20" required>
                                     </div>
                                     <div class="form-group">
                                             <label>Contraseña</label>
-                                            <input type="text" id="Pasword" name="Pasword" class="form-control" required>
+                                            <input type="text" id="Pasword" name="Pasword" class="form-control" maxlength="20" required>
                                     </div>
                                 </div>                            
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <label>Usuario</label>
-                                            <input type="text" id="Usuario" name="Usuario" class="form-control" required>
+                                            <input type="text" id="Usuario" name="Usuario" class="form-control" maxlength="20" required>
                                     </div>
                                     <div class="form-group">
                                             <label>Tipo de usuario</label>
                                             <select name="Tipo_usuario" class="select" required>
                                                  <option value="" disabled selected value>Seleccione</option>
-                                                <option value="Admin">Admin</option>
                                                 <option value="Empresa">Empresa</option>
                                             </select>
                                         </div>

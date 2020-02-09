@@ -2,9 +2,9 @@
 require '../functions.php';
 require '../../conexionbs.php';
 $dbho = new conexionbs();
-$query="SELECT `identificacion`, `documento`, `nombre`, `apellido`, `fecha_naci`, `genero`, `edad`, `correo`, `personal`, `empresas`, `fecha` FROM `clientes`";
+$query="SELECT `identificacion`, `documento`, `nombre`, `apellido`, `celular`, `fecha_naci`, `genero`, `edad`, `correo`, `personal`, `empresas`, `fecha` FROM `clientes`";
 $res = $dbho -> query($query);
-if(!$res) // si no es nulo .l.
+if(!$res)
 {
     die("ERROR");
 }else{

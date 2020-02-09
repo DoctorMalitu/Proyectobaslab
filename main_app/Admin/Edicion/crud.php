@@ -10,6 +10,7 @@ if (isset($_POST['documento'])){
 	$documento =mysqli_real_escape_string($dbho, htmlentities( $_POST['documento']));
 	$nombre = mysqli_real_escape_string($dbho, htmlentities($_POST['nombre']));
 	$apellido = mysqli_real_escape_string($dbho, htmlentities($_POST['apellido']));
+	$celular = mysqli_real_escape_string($dbho, htmlentities($_POST['celular']));
 	$fecha_naci = mysqli_real_escape_string($dbho, htmlentities($_POST['fecha_naci']));
 	$genero = mysqli_real_escape_string($dbho, htmlentities($_POST['genero']));
 	$edad = mysqli_real_escape_string($dbho, htmlentities($_POST['edad']));
@@ -17,7 +18,7 @@ if (isset($_POST['documento'])){
 	$personal = mysqli_real_escape_string($dbho, htmlentities($_POST['personal']));
 	$empresas = mysqli_real_escape_string($dbho, htmlentities($_POST['empresas']));
 
-	$query="INSERT INTO `clientes`(`identificacion`, `documento`, `nombre`, `apellido`, `fecha_naci`, `genero`, `edad`, `correo`, `personal`, `empresas`, `fecha`) VALUES ('$identificacion','$documento','$nombre','$apellido','$fecha_naci','$genero','$edad','$correo','$personal','$empresas','".date('Y-m-d')."')";
+	$query="INSERT INTO `clientes`(`identificacion`, `documento`, `nombre`, `apellido`, `celular` , `fecha_naci`, `genero`, `edad`, `correo`, `personal`, `empresas`, `fecha`) VALUES ('$identificacion','$documento','$nombre','$apellido','$celular','$fecha_naci','$genero','$edad','$correo','$personal','$empresas','".date('Y-m-d')."')";
 	$dbho -> query($query);
 	print("Datos guardados");
 	echo "<br>";

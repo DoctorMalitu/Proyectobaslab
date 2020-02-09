@@ -13,6 +13,7 @@ $dbho = new conexionbs();
         $documento = $_POST['documento'];
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
+        $celular = $_POST['celular'];
         $fecha_naci = $_POST['fecha_naci'];
         $genero = $_POST['genero'];
         $edad = $_POST['edad'];
@@ -21,7 +22,7 @@ $dbho = new conexionbs();
         $empresas = $_POST['empresas'];
         $id= $_POST['id'];
     
-        $query="UPDATE `clientes` SET `identificacion`='$identificacion',`documento`='$documento',`nombre`='$nombre',`apellido`='$apellido',`fecha_naci`='$fecha_naci',`genero`='$genero',`edad`='$edad',`correo`='$correo',`personal`='$personal',`empresas`='$empresas' WHERE documento=$id";
+        $query="UPDATE `clientes` SET `identificacion`='$identificacion',`documento`='$documento',`nombre`='$nombre',`apellido`='$apellido', `celular`='$celular', `fecha_naci`='$fecha_naci',`genero`='$genero',`edad`='$edad',`correo`='$correo',`personal`='$personal',`empresas`='$empresas' WHERE documento=$id";
         $dbho -> query($query);
         echo('Datos actualizados');
      } 

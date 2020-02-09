@@ -26,7 +26,7 @@ if(isset($_SESSION['tiempo']) ) {
             session_destroy();              
             //Redirigimos pagina.
             $archivoActual = $_SERVER['PHP_SELF'];
-            header("refresh:1;url= http://localhost/Baslabgit2");
+            header("refresh:1;url= http://localhost/finalbaslab/");
 
             exit();
         } else {  // si no ha caducado la sesion, actualizamos

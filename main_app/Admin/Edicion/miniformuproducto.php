@@ -66,10 +66,10 @@ require '../functions.php';
                             <a href="consult.php"><i class="fas fa-users"></i> <span>Pacientes</span></a>
                         </li>   
                         <li class="active">
-                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Examenes</span></a>
+                            <a href="miniformuproducto.php"><i class="fas fa-notes-medical"></i> <span>Registro Exámenes</span></a>
                         </li>
                         <li>
-                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Examenes</span></a>
+                            <a href="consultproducto.php"><i class="fas fa-microscope"></i> <span>Exámenes</span></a>
                         </li> 
                         <li>
                             <a href="enviarcorreo.php"><i class="fa fa-paper-plane"></i> <span>Enviar Resultados</span></a>
@@ -94,9 +94,9 @@ require '../functions.php';
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-box">
-                            <h4 class="card-title">REGISTRO DE EXAMENES NUEVOS PARA LA TABLA DE LA PAGINA</h4>
+                            <h4 class="card-title">REGISTRO DE EXÁMENES NUEVOS PARA LA TABLA DE LA PÁGINA</h4>
                             <form action="../crudpro.php" method="POST">
-                                <h4 class="card-title">EXAMENES</h4>
+                                <h4 class="card-title">EXÁMENES</h4>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
@@ -106,7 +106,7 @@ require '../functions.php';
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                                <label>Nombre del examen</label>
+                                                <label>Nombre del exámen</label>
                                                 <input type="text" id="nombre" name="nombre" class="form-control" pattern="[A-Za-z0-9_-]{1,15}" required>
                                             </div>       
                                     </div>

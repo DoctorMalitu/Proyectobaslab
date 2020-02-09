@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2019 a las 00:52:24
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 09-02-2020 a las 23:14:16
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `login`
+-- Base de datos: `localbaslab`
 --
 
 -- --------------------------------------------------------
@@ -30,18 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `Nombre` varchar(20) NOT NULL,
+  `Nombre` varchar(30) NOT NULL,
   `Usuario` varchar(10) NOT NULL,
-  `Pasword` varchar(20) NOT NULL,
-  `Tipo_usuario` varchar(10) NOT NULL
+  `Pasword` varchar(256) NOT NULL,
+  `Tipo_usuario` varchar(10) NOT NULL,
+  `fecha_regis` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `Nombre`, `Usuario`, `Pasword`, `Tipo_usuario`) VALUES
-(1, 'Buche', 'Buchelin', '123', 'Admin');
+INSERT INTO `usuarios` (`id`, `Nombre`, `Usuario`, `Pasword`, `Tipo_usuario`, `fecha_regis`) VALUES
+(1, 'Jose Luis', 'Jose', '123456', 'Admin', '2020-02-09');
 
 --
 -- Índices para tablas volcadas
